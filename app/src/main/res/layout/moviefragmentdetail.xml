@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <!--xmlns:FontAwesome=""-->
+
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/moviecard"
+        android:layout_margin="2dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="4dp">
+
+        <RelativeLayout
+            android:id="@+id/nested_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/InLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+<ImageView android:id="@+id/imageposter"
+    android:layout_width="@dimen/card_width"
+    android:layout_height="250dp"
+    android:layout_margin="4dp"
+    android:src="@drawable/poster"
+    android:contentDescription="@null"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/releasedate"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:layout_weight="2"
+                    android:text="20-June-2015"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="8.1/10"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold"/>
+                <com.like.LikeButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/heart_button"
+                    app:icon_type="heart"
+                    app:circle_start_color="@color/colorPrimary"
+                    android:layout_gravity="center"
+                    app:dots_primary_color="@color/colorAccent"
+                    app:dots_secondary_color="@color/colorPrimary"
+                    app:circle_end_color="@color/colorAccent"
+                    app:icon_size="25dp"
+                    app:anim_scale_factor="2"
+
+                    />
+
+
+                <!--<net.steamcrafted.materialiconlib.MaterialIconView-->
+                    <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="12dp"-->
+                    <!--app:materialIcon="heart"-->
+                <!--app:materialIconColor="#ff0000"-->
+                <!--app:materialIconSize="25dp"-->
+
+                <!--android:id="@+id/hearticon"-->
+                <!--/>-->
+                <!--<com.beardedhen.androidbootstrap.font.FontAwesome.FA_STAR-->
+                    <!--android:id="@+id/star_button"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center">-->
+                    <!--&lt;!&ndash;app:anim_scale_factor="3"&ndash;&gt;-->
+                    <!--&lt;!&ndash;app:icon_size="25dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;app:icon_type="star">&ndash;&gt;-->
+                    <!--</com.beardedhen.androidbootstrap.font.FontAwesome.FA_STAR>-->
+
+                <!--<ImageButton android:id="@+id/like"-->
+                    <!--app:iconsize-->
+                    <!--style="?android:attr/buttonStyleSmall>-->
+
+<!--</ImageButton>-->
+            </LinearLayout>
+
+</LinearLayout>
+<TextView
+            android:id="@+id/plot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/InLayout"
+            android:layout_margin="5dp"
+            android:layout_marginTop="@dimen/plot_top_margin"/>
+        </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+</android.support.v4.widget.NestedScrollView>

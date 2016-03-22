@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.beetel.moviesApp">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application
+        android:allowBackup="true"
+        android:largeHeap="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data android:name="com.example.beetel.moviesApp.utilities.ConfigGlide"
+            android:value="GlideModule"/>
+        <provider
+            android:authorities="com.example.beetel.moviesApp."
+            android:name="com.example.beetel.moviesApp.data.model.MovieProvider"/>
+        <activity android:name="com.example.beetel.moviesApp.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.Main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.beetel.moviesApp.MovieDetailActivity"
+            android:label="@string/title_activity_moviedetails"
+            android:parentActivityName="com.example.beetel.moviesApp.MainActivity"
+            android:theme="@style/AppTheme.Detail">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.beetel.moviesApp.MainActivity"/>
+        </activity>
+
+    </application>
+
+</manifest>
