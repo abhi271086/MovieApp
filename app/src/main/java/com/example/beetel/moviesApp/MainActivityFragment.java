@@ -89,7 +89,7 @@ if (getActivity().findViewById(R.id.multipan)!=null) {
 }
 @Override
 public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
-    final View view = inflater.inflate(R.layout.movie_fragment_main, container, false);
+    View view = inflater.inflate(R.layout.moviefragment_main, container, false);
     ButterKnife.bind(this, view);
     Orientation = getActivity().getResources().getConfiguration().orientation;
     sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
@@ -103,14 +103,14 @@ public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle save
             if (!mutiPane) {
                 Intent intent = new Intent(getContext(), MovieDetailActivity.class);
                 intent.putExtra(MovieAPIUtility.EXTRA_RESULT_MODEL, model);
-               ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(),view, String.valueOf(mRecyclerView));
+               ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity());
                 ActivityCompat.startActivity(getActivity(), intent, activityOptionsCompat.toBundle());
             } else {
                 Fragment fragment = new DetailsFragmentActivity();
                 Bundle arg = new Bundle();
                 arg.putParcelable(MovieAPIUtility.EXTRA_RESULT_MODEL, model);
                 fragment.setArguments(arg);
-                getFragmentManager().beginTransaction().replace(R.id.frame_movie_detail, fragment).commit();
+               getActivity() .getSupportFragmentManager().beginTransaction().replace(R.id.frame_movie_detail, fragment).commit();
             }
         }
 

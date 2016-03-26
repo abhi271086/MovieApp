@@ -4,9 +4,9 @@ package com.example.beetel.moviesApp.utilities;
  * Created by beetel on 7/03/2016.
  */
 public class MovieAPIUtility {
-    public static final String API_BASE_URL="https://api.themoviedb.org/3/movie/550?api_key=900005580a3d413a1aa6cb617d127f8e";
+    public static final String API_BASE_URL="https://api.themoviedb.org/3/";
     public static final String URL_IMAGE_BASE="http://image.tmdb.org/t/p/w185/";
-    public static final String URL_IMAGE_BACKDROP_BASE="http://image.tmdb.org/t/p/w342";
+    public static final String URL_IMAGE_BACKDROP_BASE="http://image.tmdb.org/t/p/w342/";
     public static final String SORT_POPULAR_DESC="popularity.desc";
     public static final String SORT_RATING_DESC="vote_average.desc";
 

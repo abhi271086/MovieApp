@@ -65,6 +65,8 @@ public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle save
         model = getActivity().getIntent().getParcelableExtra(MovieAPIUtility.EXTRA_RESULT_MODEL);
         if (model == null)
             model = this.getArguments().getParcelable(MovieAPIUtility.EXTRA_DETAIL_FRAGMENT);
+
+
         String url = MovieAPIUtility.URL_IMAGE_BASE + model.getPosterUrl();
         tvReleaseDate.setText(String.format(getString(R.string.release_date), model.getReleasedate()));
         tvRating.setText(String.format(getString(R.string.rating), model.getRating()));

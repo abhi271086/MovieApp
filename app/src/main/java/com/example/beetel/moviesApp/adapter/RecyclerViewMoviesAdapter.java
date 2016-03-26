@@ -46,11 +46,16 @@ public class RecyclerViewMoviesAdapter extends RecyclerView.Adapter<RecyclerView
         holder.textView_Title.setText(title);
         Glide.with(holder.imageView.getContext())
                 .load(url)
+                .centerCrop()
                 .listener(GlidePalette.with(url)
                         .use(GlidePalette.Profile.VIBRANT)
-                                .intoBackground(holder.textView_Title)
-                                        .crossfade(true)
-                        )
+                        .intoBackground(holder.textView_Title)
+                        .crossfade(true)
+                )
+
+
+
+
                         .error(R.drawable.poster)
                         .centerCrop()
                         .diskCacheStrategy(DiskCacheStrategy.ALL)

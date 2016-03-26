@@ -8,15 +8,3 @@
     android:layout_width="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:layout="@layout/movie_fragment_main"/>
-    <!--<com.beardedhen.androidbootstrap.BootstrapThumbnail-->
-        <!--android:layout_width="wrap_content"-->
-        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
-        <!--android:id="@+id/imageView"-->
-        <!--android:layout_gravity="center_vertical"-->
-        <!--app:bootstrapBrand="info"-->
-        <!--app:hasBorder="true"></com.beardedhen.androidbootstrap.BootstrapThumbnail>-->
-
-        <!--android:src="@"-->
-
-
-<!--</LinearLayout>-->

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -56,8 +55,8 @@ public class DetailsFragmentActivity extends Fragment {
     {
         viewPager=(ViewPager)getActivity().findViewById(R.id.vp_movie_detail);
         tabLayout=(TabLayout)getActivity().findViewById(R.id.tabs);
-        FragmentManager fragmentManager=this.getFragmentManager();
-        MoviesDetailsViewPagerAdapter pagerAdapter=new MoviesDetailsViewPagerAdapter(fragmentManager,model);
+        //FragmentManager fragmentManager=this.getFragmentManager();
+        MoviesDetailsViewPagerAdapter pagerAdapter=new MoviesDetailsViewPagerAdapter(getActivity().getSupportFragmentManager(),model);
         pagerAdapter.notifyDataSetChanged();
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
@@ -75,6 +74,7 @@ public class DetailsFragmentActivity extends Fragment {
     {
         View view=inflater.inflate(R.layout.movie_fragment_main,container,false);
         ButterKnife.bind(this,view);
+
         model=getActivity().getIntent().getParcelableExtra(MovieAPIUtility.EXTRA_RESULT_MODEL);
 
         if(model==null){

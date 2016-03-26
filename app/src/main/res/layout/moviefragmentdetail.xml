@@ -73,33 +73,6 @@
                     app:anim_scale_factor="2"
 
                     />
-
-
-                <!--<net.steamcrafted.materialiconlib.MaterialIconView-->
-                    <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:padding="12dp"-->
-                    <!--app:materialIcon="heart"-->
-                <!--app:materialIconColor="#ff0000"-->
-                <!--app:materialIconSize="25dp"-->
-
-                <!--android:id="@+id/hearticon"-->
-                <!--/>-->
-                <!--<com.beardedhen.androidbootstrap.font.FontAwesome.FA_STAR-->
-                    <!--android:id="@+id/star_button"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center">-->
-                    <!--&lt;!&ndash;app:anim_scale_factor="3"&ndash;&gt;-->
-                    <!--&lt;!&ndash;app:icon_size="25dp"&ndash;&gt;-->
-                    <!--&lt;!&ndash;&lt;!&ndash;app:icon_type="star">&ndash;&gt;-->
-                    <!--</com.beardedhen.androidbootstrap.font.FontAwesome.FA_STAR>-->
-
-                <!--<ImageButton android:id="@+id/like"-->
-                    <!--app:iconsize-->
-                    <!--style="?android:attr/buttonStyleSmall>-->
-
-<!--</ImageButton>-->
             </LinearLayout>
 
 </LinearLayout>

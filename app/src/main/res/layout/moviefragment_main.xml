@@ -8,6 +8,6 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="true"
-    tools:context=".MainActivity"
+    tools:context=".MainActivityFragment"
     tools:showIn="@layout/activity_main">
 </android.support.v7.widget.RecyclerView>

@@ -86,7 +86,7 @@ private void callReview(String id) {
 
                 @Override
                 public void onNext(MovieReviewListModel movieReviewListModel) {
-                    reviewList = new ArrayList<MovieReviewListModel.ReviewModel>();
+                    reviewList = new ArrayList<>();
                     for (int i = 0; i < movieReviewListModel.getResults().size(); i++) {
                         reviewList.add(movieReviewListModel.getResults().get(i));
                         Log.d(LOG_TAG, movieReviewListModel.getResults().get(i).getContent());
