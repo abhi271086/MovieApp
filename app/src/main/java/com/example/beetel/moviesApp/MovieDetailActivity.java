@@ -15,20 +15,19 @@ import butterknife.ButterKnife;
  * Created by beetel on 7/03/2016.
  */
 public class MovieDetailActivity extends AppCompatActivity {
-
-    @Bind(R.id.vp_movie_detail)
-    ViewPager viewPager;
-    @Bind(R.id.tabs)
-    TabLayout tabLayout;
+    @Bind(R.id.vp_movie)ViewPager viewPager;
+    @Bind(R.id.switchtabs)TabLayout tabLayout;
     private boolean twoPane=false;
-
     MovieResultListModel.ResultModel model;
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.moviesdetail_layout);
         ButterKnife.bind(this);
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar_movie_detail);
         setSupportActionBar(toolbar);
     }
+
+
 }

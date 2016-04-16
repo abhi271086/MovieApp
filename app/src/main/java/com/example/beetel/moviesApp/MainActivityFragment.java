@@ -129,8 +129,9 @@ public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle save
     if (savedInstanceState != null && savedInstanceState.containsKey(MovieAPIUtility.EXTRA_MOVIE)) {
         mPosterList = savedInstanceState.getParcelableArrayList(MovieAPIUtility.EXTRA_MOVIE);
         moviesAdapter = new RecyclerViewMoviesAdapter(getActivity(), mPosterList, movieOnClickHandler);
-        moviesAdapter.notifyDataSetChanged();
+
         mRecyclerView.setAdapter(moviesAdapter);
+        moviesAdapter.notifyDataSetChanged();
     }
     //create REST service endpoint
     movieAPI = RServiceGenerator.createService(MovieAPI.class);
@@ -169,8 +170,8 @@ public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle save
                 resultModel.setMovieId(cursor.getString(cursor.getColumnIndex(MovieContract.Movie.COLUMN_MOVIE_ID)));
                 mPosterList.add(resultModel);
                 moviesAdapter = new RecyclerViewMoviesAdapter(getActivity(), mPosterList, movieOnClickHandler);
-                moviesAdapter.notifyDataSetChanged();
                 mRecyclerView.setAdapter(moviesAdapter);
+                moviesAdapter.notifyDataSetChanged();
             }
         }
     }
@@ -183,8 +184,9 @@ public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle save
                     @Override
                     public void onCompleted() {
                         moviesAdapter=new RecyclerViewMoviesAdapter(getActivity(),mPosterList,movieOnClickHandler);
-                        moviesAdapter.notifyDataSetChanged();
+
                         mRecyclerView.setAdapter(moviesAdapter);
+                        moviesAdapter.notifyDataSetChanged();
                         Log.d(TAG,"Completed");
                     }
 

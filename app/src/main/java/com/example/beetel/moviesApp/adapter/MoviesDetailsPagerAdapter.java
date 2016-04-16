@@ -14,9 +14,10 @@ import com.example.beetel.moviesApp.utilities.MovieAPIUtility;
 /**
  * Created by beetel on 7/03/2016.
  */
-public class MoviesDetailsViewPagerAdapter extends FragmentStatePagerAdapter {
+public class MoviesDetailsPagerAdapter extends FragmentStatePagerAdapter {
     private MovieResultListModel.ResultModel resultModel;
-    public MoviesDetailsViewPagerAdapter(FragmentManager fm,MovieResultListModel.ResultModel model)
+
+    public MoviesDetailsPagerAdapter(FragmentManager fm, MovieResultListModel.ResultModel model)
     {
         super(fm);
         this.resultModel=model;
@@ -38,11 +39,8 @@ public class MoviesDetailsViewPagerAdapter extends FragmentStatePagerAdapter {
         switch (pos)
         {
             case 0:
-                DetailsFragmentActivity detailsFragmentActivity=new DetailsFragmentActivity();
-                Bundle arg=new Bundle();
-                arg.putParcelable(MovieAPIUtility.EXTRA_DETAIL_FRAGMENT, resultModel);
-                detailsFragmentActivity.setArguments(arg);
-                return detailsFragmentActivity;
+
+                return DetailsFragmentActivity.newInstance(resultModel);
 
             case 1:
                 TrailerFragment trailerFragment=new TrailerFragment();
@@ -60,6 +58,7 @@ public class MoviesDetailsViewPagerAdapter extends FragmentStatePagerAdapter {
                 return new Fragment();
         }
     }
+
 
     @Override
     public CharSequence getPageTitle(int position ){

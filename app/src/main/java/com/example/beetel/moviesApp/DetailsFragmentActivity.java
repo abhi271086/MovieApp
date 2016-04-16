@@ -15,7 +15,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.beetel.moviesApp.adapter.MoviesDetailsViewPagerAdapter;
+import com.example.beetel.moviesApp.adapter.MoviesDetailsPagerAdapter;
 import com.example.beetel.moviesApp.data.model.MovieResultListModel;
 import com.example.beetel.moviesApp.utilities.MovieAPIUtility;
 
@@ -26,9 +26,12 @@ import butterknife.ButterKnife;
  */
 public class DetailsFragmentActivity extends Fragment {
     ImageView imgPoster;
+
+
+    private MovieResultListModel.ResultModel model;
     private ViewPager viewPager;
     private TabLayout tabLayout;
-    private MovieResultListModel.ResultModel model;
+
     private boolean fromactivity=true;
     private boolean twoPane=false;
     public DetailsFragmentActivity(){}
@@ -50,24 +53,6 @@ public class DetailsFragmentActivity extends Fragment {
                 e.printStackTrace();
             }
         }
-
-  private void setViewpagerAndBackDrop()
-    {
-        viewPager=(ViewPager)getActivity().findViewById(R.id.vp_movie_detail);
-        tabLayout=(TabLayout)getActivity().findViewById(R.id.tabs);
-        //FragmentManager fragmentManager=this.getFragmentManager();
-        MoviesDetailsViewPagerAdapter pagerAdapter=new MoviesDetailsViewPagerAdapter(getActivity().getSupportFragmentManager(),model);
-        pagerAdapter.notifyDataSetChanged();
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
-
-        Glide.with(DetailsFragmentActivity.this)
-                .load(MovieAPIUtility.URL_IMAGE_BACKDROP_BASE+model.getBackdropUrl())
-                .error(R.drawable.poster)
-                .centerCrop()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imgPoster);
-    }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState)
@@ -84,5 +69,32 @@ public class DetailsFragmentActivity extends Fragment {
         }
         return view;
     }
+  private void setViewpagerAndBackDrop()
+    {
+        viewPager=(ViewPager)getActivity().findViewById(R.id.vp_movie);
+        tabLayout=(TabLayout)getActivity().findViewById(R.id.switchtabs);
+        //FragmentManager fragmentManager=this.getFragmentManager();
+        MoviesDetailsPagerAdapter pagerAdapter=new MoviesDetailsPagerAdapter(getChildFragmentManager(),model);
+
+
+        viewPager.setAdapter(pagerAdapter);
+        //tabLayout.setTabsFromPagerAdapter(pagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+        pagerAdapter.notifyDataSetChanged();
+        Glide.with(DetailsFragmentActivity.this)
+                .load(MovieAPIUtility.URL_IMAGE_BACKDROP_BASE+model.getBackdropUrl())
+                .error(R.drawable.poster)
+                .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(imgPoster);
+    }
+
+public static DetailsFragmentActivity newInstance(MovieResultListModel.ResultModel resultModel){
+    DetailsFragmentActivity detailsFragmentActivity=new DetailsFragmentActivity();
+    Bundle arg=new Bundle();
+    arg.putParcelable(MovieAPIUtility.EXTRA_DETAIL_FRAGMENT, resultModel);
+    detailsFragmentActivity.setArguments(arg);
+    return detailsFragmentActivity;
+}
     }
 

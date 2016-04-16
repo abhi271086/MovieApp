@@ -69,8 +69,9 @@ public class TrailerFragment extends Fragment {
         if(savedInstanceState!=null && savedInstanceState.containsKey(MovieAPIUtility.EXTRA_VIDEO)){
             mVideoList=savedInstanceState.getParcelableArrayList(MovieAPIUtility.EXTRA_VIDEO);
             videoAdapter=new RecyclerViewVideoAdapter(mVideoList,getActivity());
-            videoAdapter.notifyDataSetChanged();
+
             mRecyclerView.setAdapter(videoAdapter);
+            videoAdapter.notifyDataSetChanged();
         }
         callTrailer(id);
         return view;
@@ -85,8 +86,9 @@ public class TrailerFragment extends Fragment {
                     @Override
                     public void onCompleted() {
                         videoAdapter = new RecyclerViewVideoAdapter(mVideoList, getActivity());
-                        videoAdapter.notifyDataSetChanged();
+
                         mRecyclerView.setAdapter(videoAdapter);
+                        videoAdapter.notifyDataSetChanged();
                         Log.d(LOG_TAG, "Completed loading movie videos");
                     }
 

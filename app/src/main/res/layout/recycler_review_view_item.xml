@@ -27,7 +27,6 @@
             android:id="@+id/textview_review_content"
             android:layout_below="@+id/textview_review_author"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
             android:text="This is Trailer"/>
         <TextView

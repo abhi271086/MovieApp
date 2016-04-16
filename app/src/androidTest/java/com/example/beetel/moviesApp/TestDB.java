@@ -45,7 +45,9 @@ public class TestDB extends AndroidTestCase{
                 MovieContract.Movie.COLUMN_RELEASE_DATE,
                 MovieContract.Movie.COLUMN_MOVIE_ID
         };
-        Cursor c=db.query(MovieContract.Movie.TABLE_NAME,colums,null,null,null,null,null);
+        Cursor c=db.query(
+                MovieContract.Movie.TABLE_NAME,colums,null,null,null,null,null
+        );
         while (c.moveToNext())
         {
             c.getString(c.getColumnIndex(MovieContract.Movie.COLUMN_TITLE));

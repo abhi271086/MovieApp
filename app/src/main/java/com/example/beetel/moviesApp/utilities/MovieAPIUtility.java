@@ -1,8 +1,6 @@
 package com.example.beetel.moviesApp.utilities;
 
-/**
- * Created by beetel on 7/03/2016.
- */
+
 public class MovieAPIUtility {
     public static final String API_BASE_URL="https://api.themoviedb.org/3/";
     public static final String URL_IMAGE_BASE="http://image.tmdb.org/t/p/w185/";
