@@ -10,5 +10,11 @@
     <string name="transition_name_detail_movie">transition_movie</string>
     <string name="action_share">Share</string>
     <string name="icon_heart">&#xf004;</string>
+    <string name="rdate">20-June-2015</string>
+    <string name="movie_rating">8.1/10</string>
+    <string name="movie_name">Intersteller</string>
+    <string name="author">Author</string>
+    <string name="movie_trailer">This is Trailer</string>
+    <string name="link">Link</string>
     <string name="api_key">900005580a3d413a1aa6cb617d127f8e</string>
 </resources>

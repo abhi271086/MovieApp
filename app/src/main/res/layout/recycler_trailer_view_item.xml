@@ -12,15 +12,15 @@ card_view:cardCornerRadius="2dp"
 card_view:cardElevation="4dp">
 
 <RelativeLayout
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ImageView
+        android:id="@+id/imageview_trailer_thumbnail"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_margin="10dp"
-        android:id="@+id/imageview_trailer_thumbnail"
         android:contentDescription="@null"
         android:orientation="vertical"
         android:scaleType="centerCrop"
@@ -29,16 +29,16 @@ card_view:cardElevation="4dp">
         android:id="@+id/textview_trailername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-
-        android:layout_marginTop="30dp"
-        android:layout_toEndOf="@+id/imageview_trailer_thumbnail"
-
         android:layout_alignParentBottom="true"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+
+        android:layout_toEndOf="@+id/imageview_trailer_thumbnail"
 
 
         android:gravity="center"
-        android:text="This is trailer"
+        android:text="@string/movie_trailer"
        />
 </RelativeLayout>
 </android.support.v7.widget.CardView>
